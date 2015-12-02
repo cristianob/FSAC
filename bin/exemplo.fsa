@@ -1,0 +1,25 @@
+name GameStateFSA
+
+include "Classes/Fieldstate.h"
+
+input_parameter Robot *robot, Fieldstate *fs
+output_parameter Robot *robot, Fieldstate *fs
+
+input function distance_robot_ball	# Distância do robô com a bola
+input function angle_robot_ball_goal	# Angulo entre o robô, bola e gol
+
+initial_state SEARCHING_BALL
+
+state SEARCHING_BALL
+condition distance_robot_ball > 200
+from ALIGN_BALL, RUNNING_GOAL
+
+state ALIGN_BALL
+condition distance_robot_ball <= 200
+from SEARCHING_BALL
+condition angle_robot_ball_goal > 0.3
+from RUNNING_GOAL
+
+state RUNNING_GOAL
+condition angle_robot_ball_goal < 0.3
+from ALIGN_BALL
