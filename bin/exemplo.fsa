@@ -2,11 +2,11 @@ name GameStateFSA
 
 include "Classes/Fieldstate.h"
 
-input_parameter Robot *robot, Fieldstate *fs
-output_parameter Robot *robot, Fieldstate *fs
+input_parameter 	Robot *robot, Fieldstate *fs
+output_parameter 	Robot *robot, Fieldstate *fs
 
-input function distance_robot_ball	# Distância do robô com a bola
-input function angle_robot_ball_goal	# Angulo entre o robô, bola e gol
+input distance_robot_ball	# Distância do robô com a bola
+input angle_robot_ball_goal	# Angulo entre o robô, bola e gol
 
 initial_state SEARCHING_BALL
 

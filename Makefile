@@ -2,7 +2,11 @@ CC          := g++
 CFLAGS      := -O -std=c++11 -Iinclude
 CLIBS       := -lsimple_tokenizer
 
-OBJ := src/lexical.o src/main.o
+OBJ :=  src/Analizer.o\
+	src/lexical.o\
+	src/syntactic.o\
+	src/semantic.o\
+	src/main.o
 
 prefix	    := /usr/local
 
