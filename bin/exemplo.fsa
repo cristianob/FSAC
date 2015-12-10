@@ -1,6 +1,7 @@
 name GameStateFSA
 
 include "Classes/Fieldstate.h"
+include "Classes/Robot.h"
 
 input_parameter 	Robot *robot, Fieldstate *fs
 output_parameter 	Robot *robot, Fieldstate *fs

@@ -3,10 +3,10 @@
 #include <iostream>
 #include <string>
 
-class Analizer {
+class Analyzer {
 	public:
-	Analizer();
-	~Analizer();
+	Analyzer();
+	~Analyzer();
 	
 	void assert(bool condition, int aerrno, std::string errno_string, size_t line, std::string token);
 };

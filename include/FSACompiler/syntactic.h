@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <fstream>
 
-#include "FSACompiler/Analizer.h"
+#include "FSACompiler/Analyzer.h"
 
 #define SYMBOL_NAME		0
 #define SYMBOL_INCLUDE		1
@@ -17,7 +17,7 @@
 #define SYMBOL_CONDITION	7
 #define SYMBOL_FROM		8
 
-class Syntactic : Analizer {
+class Syntactic : Analyzer {
 	public:
 	Syntactic();
 	~Syntactic();

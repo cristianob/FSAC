@@ -7,6 +7,7 @@
 #include "FSACompiler/lexical.h"
 #include "FSACompiler/syntactic.h"
 #include "FSACompiler/semantic.h"
+#include "FSACompiler/output.h"
 
 void print_version();
 void print_help();
@@ -35,7 +36,7 @@ int main(int argc, char **argv) {
 		}
 	}
 	
-	// Checking file_name argument
+	// Checking input_file argument
 	if(argc < optind+1) {
 		print_no_file();
 	}
@@ -71,9 +72,11 @@ void parse_file(char* file_name) {
 		semantic_analizer.analize(line_n, syntactic_analizer.result_id, lexical_analizer.result_value);
 		
 		line_n++;
-	}
-	
+	}	
 	fs.close();
+	
+	Output output = Output(&semantic_analizer, std::string(file_name));
+	output.generate_files();
 }
 
 void print_version() {
@@ -92,7 +95,7 @@ void print_help() {
 }
 
 void print_no_file() {
-	std::cerr << "[Error] No file specified." << std::endl
+	std::cerr << "[Error] No input_file specified." << std::endl
 		  << "Usage: " << prg_name << " [-hv] [input_file]" << std::endl;
 	exit(-1);
 }

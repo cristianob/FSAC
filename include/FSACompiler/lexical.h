@@ -3,9 +3,9 @@
 #include <vector>
 #include <simple_tokenizer/simple_tokenizer.h>
 
-#include "FSACompiler/Analizer.h"
+#include "FSACompiler/Analyzer.h"
 
-class Lexical : Analizer{
+class Lexical : Analyzer{
 	public:
 	Lexical();
 	~Lexical();
